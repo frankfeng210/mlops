@@ -20,7 +20,7 @@ jobs:
         mode: upload
     code: src/prep
     environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
-    compute: azureml:c002
+    compute: frank_azureml:c002
     command: >-
       python prep.py 
       --data ${{inputs.data}} 
