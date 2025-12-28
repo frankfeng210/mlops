@@ -19,7 +19,7 @@ jobs:
       test_data:
         mode: upload
     code: src/prep
-    environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+    environment: frank_azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
     compute: frank_azureml:c002
     command: >-
       python prep.py 
@@ -37,8 +37,8 @@ jobs:
     outputs:
       model: 
     code: src/train
-    environment: azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
-    compute: azureml:c002
+    environment: frank_azureml:AzureML-sklearn-1.0-ubuntu20.04-py38-cpu@latest
+    compute: frank_azureml:c002
     command: >-
       python train.py 
       --train_data ${{inputs.train_data}} 
